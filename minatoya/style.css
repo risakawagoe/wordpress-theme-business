@@ -1,0 +1,959 @@
+/* 
+Theme Name: MINATOYA
+Author: minatoya
+Description: Original theme for MINATOYA homepage created 2021.
+Version: 1.0
+ */
+@charset "UTF-8";
+
+/* 共通パーツ
+ 
+====================================================*/
+/* 全体 */
+a {
+  text-decoration: none;
+  color: #000;
+}
+li {
+  list-style-type: none;
+}
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+main *::selection {
+  background: #003F54;
+  color: #fff;
+}
+
+/* section幅 */
+.w520, .w760, .w960 {
+  margin-left: auto;
+  margin-right: auto;
+}
+.w520 {
+  max-width: 520px;
+}
+.w760 {
+  max-width: 760px;
+}
+.w960 {
+  max-width: 960px;
+}
+
+
+
+/* snsボタン */
+ul.sns-list {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+ul.sns-list li:not(:last-child) {
+  margin-right: 10px;
+}
+ul.sns-list img {
+  width: 20px;
+}
+
+
+
+
+/* フォント */
+body, .gothic {
+  font-family: 'YuGothic','Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+}
+.mincho {
+  font-family: 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体','ヒラギノ明朝 ProN','Hiragino Mincho ProN',sans-serif;
+}
+.oswald {
+  font-family: 'Oswald', sans-serif;
+}
+.roboto {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.vertical {
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+}
+
+
+
+
+/* ボタン */
+.btn-blue {
+  display: block;
+  border: 1px solid #BDD7EE;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px;
+  text-align: center;
+}
+a.btn-blue {
+  color: #1F4E79;
+}
+.btn-blue:hover {
+  transition: .3s;
+  background-color: #BDD7EE;
+}
+a.btn-red {
+  display: block;
+  background-color: #B82C2C;
+  font-size: smaller;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 30px;
+  cursor: pointer;
+  width: 120px;
+}
+a.btn-red {
+  color: #fff;
+}
+a.btn-red:hover {
+  transition: .3s;
+  background-color: #971515;
+}
+
+
+
+
+
+/* ヘッダー
+ 
+====================================================*/
+
+header {
+  padding-bottom: 20px;
+}
+/* banner */
+#banner {
+  height: 100vh;
+  min-height: 650px;
+  background-color: rgb(228, 228, 228);
+  background-image: url(images/cover-sp.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+#header-nav {
+  margin-top: 20px;
+}
+
+#header-logo, #catch {
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+}
+#header-logo {
+  width: 120px;
+  top: 10vh;
+}
+#catch {
+  top: 30vh;
+  height: 70vh;
+  font-weight: 500;
+  font-size: large;
+  line-height: 2.2;
+}
+#catch p {
+  display: inline;
+}
+@media screen and (max-height: 560px) and (orientation: landscape) {
+  #banner {
+    height: 100vw;
+  }
+  #catch {
+    top: 50vh;
+    height: 70vw;
+  }
+}
+
+
+
+/* メインエリア（トップ）
+ 
+====================================================*/
+main > section {
+  margin-top: 32px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+main > section:last-child {
+  padding-bottom: 0;
+}
+
+
+
+/* heading */
+/* トップページのタイトルスタイル */
+.heading-top {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 300;
+}
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.content > div {
+  height: 100%;
+}
+
+.content.message {
+  padding-top: 20vh;
+  background-image: url(images/message_w640.jpg);
+  background-size: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.content.news {
+  height: 100%;
+  min-height: 80vh;
+  padding-left: 0;
+  padding-right: 0;
+  background-image: url(images/news_1920x1080.jpg);
+  background-size: cover;
+  background-position: center bottom;
+}
+
+
+/* 作品 */
+#work-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+#work-list .work {
+  flex: 0 0 30%;
+}
+#work-list > div {
+  width: 250px;
+  background-color: #003F54;
+}
+#work-list img {
+  width: 100%;
+  vertical-align: middle;
+}
+#work-list img:hover {
+  opacity: .6;
+  cursor: pointer;
+  transition: .3s;
+}
+
+
+
+
+/* SERVICE */
+.content.service {
+  text-align: center;
+  background-image: url(images/signature_h540.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.content.service > div > div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.content.service h4 {
+  padding: 5px 20px;
+  display: inline;
+  background-color: #BDD7EE;
+  line-height: 3.0;
+}
+
+
+
+/* MESSAGE */
+.message-area {
+  height: 65vh;
+  padding: 32px 20px 0 20px;
+  background-color: #fff;
+  border: solid #F1F1F1 ;
+  border-width: 0 10px 16px 0;
+  
+	
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  
+  /* text */
+  line-height: 2.0;
+  font-weight: 600;
+  font-size: medium;
+  text-indent: 1em;
+  text-align: center;
+}
+
+.message-area .vertical {
+  width: 100%;
+  height: 80%;
+  padding: 20px 20px 32px 20px;
+  overflow: auto;
+}
+
+.message-area .vertical p {
+  text-align: left;
+}
+.message-area .vertical p:last-child {
+  text-align: right;
+}
+.message-area > img {
+  width: 20vw;
+  max-width: 120px;
+}
+
+
+
+/* CONTACT */
+.content.contact {
+  text-align: center;
+}
+.content.contact p {
+  line-height: 1.5;
+}
+
+
+
+/* NEWS */
+.content.news .white-bg {
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+#news-list-all {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  text-align: right;
+}
+#news-list-all a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+#news-list-all a:hover {
+  text-decoration: underline;
+}
+.news-item {
+  padding: 10px;
+  display: block;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+}
+.news-item:hover {
+  background-color: #fff;
+  transition: .3s;
+}
+.news-info {
+  margin-bottom: 10px;
+  font-size: smaller;
+}
+
+
+
+
+/* フッター
+
+====================================================*/
+/* 全体 */
+footer {
+  padding: 0 20px 5px 20px;
+  background-color: #000;
+  text-align: center;
+}
+
+
+/* ページトップへ戻るボタン */
+#page-top {
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  background-color: #E7E6E6;
+  border-radius: 0 0 8px 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+#page-top:hover {
+  background-color: #AFABAB;
+  transition: .3s;
+}
+
+/* ロゴ画像 */
+#footer-logo {
+  width: 120px;
+  margin-top: 64px;
+  margin-bottom: 32px;
+}
+
+
+/* 「みなとや」由来 */
+.name-idea, #copy {
+  color: #fff;
+  font-size: 8px;
+}
+.name-idea {
+  margin-bottom: 32px;
+  line-height: 1.8;
+}
+
+/* 著作権 */
+#copy {
+  font-size: 8px;
+}
+
+
+/* =============================================
+ワードプレススタイル
+
+============================================= */
+/* サブページ用のヘッダーデザイン */
+
+/* banner */
+.header-sub #banner {
+  height: 20vh;
+  min-height: initial;
+  min-height: auto;
+  background-image: url(images/cover-sub.jpg);
+  background-position: top;
+  background-repeat: no-repeat;  
+}
+.header-sub #header-logo {
+  width: auto;
+  height: 8vh;
+  top: 6vh;
+}
+
+@media screen and (max-height: 560px) and (orientation: landscape) {
+  .header-sub #banner {
+    height: 30vh;
+  }
+  .header-sub #header-logo {
+    height: 20vh;
+  }
+}
+
+
+
+
+/* トップページ以外のmainエリアのmargin設定 */
+main.sub-pages {
+  margin-top: 32px;
+  margin-bottom: 64px;
+}
+
+
+
+/* カテゴリー別アーカイブページ */
+.content.category-archive {
+  padding-left: 0;
+  padding-right: 0;
+}
+.category-archive .blue-bg {
+  background-color: #BDD7EE;
+  padding: 10px 0;
+}
+
+
+
+/* 個別投稿テンプレート */
+/* ---------------------------------
+記事ページ　本文のスタイル
+--------------------------------- */
+.content.single-post {
+  padding-left: 0;
+  padding-right: 0;
+}
+hr.post-divider {
+  height: 4px;
+  width: 120px;
+  margin: 0 auto 32px auto;
+  background-color: #003F54;
+  border-radius: 4px;
+  border: solid 1px #003F54;
+ }
+.single-post article {
+  margin-bottom: 64px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.single-post article img.wp-post-image {
+  width: 100%;
+  height: auto;
+}
+.single-post article h2.heading-post {
+  margin-bottom: 10px;
+  font-size: large;
+  text-align: center;
+  line-height: 1.2;
+}
+.single-post article h2.heading-page {
+  margin-bottom: 32px;
+  font-size: 28px;
+  line-height: 1.2;
+  text-align: center;
+}
+.single-post article div.news-info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.single-post #post-pagination {
+  display: flex;
+  flex-direction: row;
+}
+.single-post #post-pagination > a {
+  width: 100%;
+}
+
+
+
+/* main-text */
+.single-post article .main-text h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 1rem;
+  position: relative;
+  font-size: large;
+  color: #003F54;
+  line-height: 1.2;
+  /* #e5f2f9 */
+  background-image: linear-gradient(-45deg, #fff 25%, #003f541e 25%, #003f541e 50%, #fff 50%, #fff 75%, #003f541e 75%, #003f541e);
+  background-size: 7px 7px;
+}
+.single-post article .main-text h4 {
+  position: relative;
+  padding: 1rem;
+  color: #003F54;
+  font-size: large;
+  line-height: 1.2;
+}
+
+.single-post article .main-text h4:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  content: '';
+  background-image: -webkit-repeating-linear-gradient(135deg, #003F54, #003F54 1px, transparent 2px, transparent 5px);
+  background-image: repeating-linear-gradient(-45deg, #003F54, #003F54 1px, transparent 2px, transparent 5px);
+  background-size: 7px 7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.single-post article .main-text h5 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 1rem;
+  line-height: 1.2;
+  font-size: large;
+  color: #003F54;
+}
+.single-post article .main-text p {
+  margin-top: 32px;
+  line-height: 1.7;
+  text-indent: 2em;
+}
+.single-post article .main-text img {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.single-post article .main-text ul, .single-post article .main-text ol {
+  padding: 10px 5px;
+}
+.single-post article .main-text ul li, .single-post article .main-text ol li {
+  list-style-position: inside;
+  line-height: 1.2;
+}
+.single-post article .main-text ul li {
+  list-style-type: disc;
+}
+.single-post article .main-text ul li::marker, .single-post article .main-text ol li::marker {
+  color: #003F54;
+  font-weight: bold;
+}
+.single-post article .main-text ol li {
+  list-style-type: decimal;
+}
+/* ソースコードボックス */
+.single-post article .main-text .wp-block-code {
+  border: solid 1px #2d2d2d;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+/************************************
+** お問い合わせフォームの入力
+************************************/
+#cf-tbl {
+  margin: 20px 10px;
+}
+#cf-tbl table{
+  width: 100%;
+}
+#cf-tbl table tr th,
+#cf-tbl table tr td{
+  padding: 0.5em;
+  text-align: left;
+  vertical-align: top;
+  border: solid #CCC;
+  border-width: 1px;
+  vertical-align: middle;
+}
+#cf-tbl table tr th{
+  width: 30%;
+  background: #eee;
+}
+
+@media screen and (max-width: 759px) {
+  #cf-tbl {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #cf-tbl table tr th,
+  #cf-tbl table tr td{
+    display: block;
+    border: none;
+  }
+  #cf-tbl table{
+    width: 100%;
+  }
+  #cf-tbl table tr th {
+    width: auto;
+    background: #fff;
+  }  
+}
+
+
+  /*「必須」文字デザイン*/
+  .required{
+    margin-right: 10px;
+    padding: 5px;
+    font-size:.8em;
+    color: #fff;
+    background: #B82C2C;
+    border-radius: 3px;
+  }
+  
+  /*「任意」文字デザイン*/
+  .optional{
+    margin-right: 10px;
+    padding: 5px;
+    background: #1F4E79;
+    border-radius: 3px;
+    font-size:.8em;
+    color: #fff;
+  }
+  
+  /* 入力項目を見やすく */
+  input.wpcf7-form-control.wpcf7-text,
+  textarea.wpcf7-form-control.wpcf7-textarea {
+    width: 94%;
+    padding: 5px 10px;
+    border: 1px solid #d0d5d8;
+    border-radius: 3px;
+    background-color: #eff1f5;
+    font-size: 100%;
+  }
+  textarea.wpcf7-form-control.wpcf7-textarea {
+    height: 200px;
+  }
+
+
+  /* エラーメッセージを見やすく */
+  span.wpcf7-not-valid-tip,
+  .wpcf7-response-output.wpcf7-validation-errors {
+    margin-top: 5px;
+    color: red;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .wpcf7 form.failed .wpcf7-response-output, .wpcf7 form.aborted .wpcf7-response-output, .wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output {
+    border-color: #ffd700;
+    background-color: #ffd700;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  .wpcf7 form.sent .wpcf7-response-output {
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  /* 送信ボタン */
+  .page-contact input#contact-submit-btn {
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #1F4E79;
+    border: 1px solid #BDD7EE;
+    background-color: #fff;
+    text-align: center;
+    cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+  }
+  .page-contact input#contact-submit-btn:hover {
+    transition: .3s;
+    background-color: #BDD7EE;
+  }
+  div.wpcf7 .ajax-loader {
+    display: none !important;
+  }
+
+/************************************
+** お問い合わせフォームの入力【ここまで】
+************************************/
+
+
+
+
+
+
+
+
+
+
+
+/* =============================================
+レスポンシブ
+520px <= screen width < 760px
+============================================= */
+@media screen and (min-width: 520px) {
+  /* ヘッダー
+  
+  ====================================================*/
+  /* メニューバーを横並びに変更 */
+  #header-nav {
+    display: flex;
+  }
+  #header-nav > div {/*旧*/
+    width: 100%;
+  }
+  #header-nav > a {/*新*/
+    width: 100%;
+  }
+  /* メイン
+  
+  ====================================================*/
+  /* メッセージエリア */
+  .content.message {
+    background-image: url(images/message_w1920.jpg);
+  }
+
+
+  /* 作品 */
+  #work-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #work-list .work {
+    flex: 0 0 40%;
+  }
+
+
+
+
+
+
+  /* NEWS */
+  .content.news .white-bg {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  
+  
+  
+  /* =============================================
+  ワードプレススタイル
+  
+  ============================================= */
+  /* カテゴリー別アーカイブ */
+  .category-archive .blue-bg {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+
+
+
+
+
+/* =============================================
+レスポンシブ
+760px <= screen width < 960px
+============================================= */
+@media screen and (min-width: 760px) {
+  /* メインヘッダー
+  
+  ====================================================*/
+
+  /* banner配置を横並びに変更 */
+  #banner {
+    height: 70vh;
+    width: 75%;
+    background-image: url(images/cover-pc.jpg);
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: center top;
+  }
+  #header-logo {
+    width: 80px;
+    left: 5%;
+    top: 5%;
+    transform: translate(0);
+  }
+  #catch {
+    height: 70vh;
+    font-size: smaller;
+    left: auto;
+    top: 50%;
+    right: 12%;
+    transform: translate(50%, -50%);
+  }
+
+
+    /* サブヘッダー
+  
+  ====================================================*/
+  /* サブページ用のヘッダーデザイン */
+  /* バナーの配置変更を無効化 */
+  .header-sub #banner {
+    height: 30vh;
+    width: 100%;
+  }
+  .header-sub #header-logo {
+    height: 10vh;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+
+
+
+
+
+
+  /* メイン
+  
+  ====================================================*/
+  /* WORKS */
+  #work-list .work {
+    flex: 0 0 30%;
+  }
+
+  /* SERVICE */
+  .content.service {
+    background-image: url(images/signature_h1080.png);
+  }
+
+
+  /* MESSAGE */
+  .message-area {
+    flex-direction: row-reverse;
+    height: 50vh;
+  }
+
+  .message-area .vertical {
+    height: 70%;
+  }
+
+  /* NEWS */
+  .content.news .white-bg {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  
+  
+  /* =============================================
+  ワードプレススタイル
+  
+  ============================================= */
+  /* カテゴリー別アーカイブ */
+  .category-archive .blue-bg {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
+
+
+
+
+/* =============================================
+レスポンシブ
+960px <= screen width < infinite
+============================================= */
+@media screen and (min-width: 960px) {
+  /* ヘッダー
+
+  ====================================================*/
+  /* メニューバーの最大幅を960pxに固定 */
+  #header-nav {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  
+  
+  /* メイン
+  
+  ====================================================*/
+
+  /* NEWS */
+  .news-item {
+    padding: 20px;
+  }
+  .news-item {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: stretch;
+  }
+  .news-info {
+    flex: 0 0 100px;
+    margin-bottom: 0;
+    line-height: 1.2;
+  }
+  .news-title {
+    line-height: 1.2;
+  }
+
+
+
+
+  /* 個別投稿 */
+  .single-post article div.news-info {
+    display: block;
+  }
+  .single-post .news-info {
+    margin-right: 0;
+  }
+}

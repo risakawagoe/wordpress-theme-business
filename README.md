@@ -2,7 +2,7 @@
 WordPress Theme developed for business purpose
 
 ## Preview
-Live site is available at https://kawagoeweb.com
+Live site is available at https://minatoya.risakawagoe.com/
 ![main-preview](./main-preview.png)
 
 ## Technology
